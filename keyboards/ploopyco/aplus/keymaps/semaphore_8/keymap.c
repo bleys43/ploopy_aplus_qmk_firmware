@@ -632,6 +632,10 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
                high-res scrolling implementation. For more details, see:
                https://github.com/qmk/qmk_firmware/issues/17585#issuecomment-2325248167
                128 gives the scroll wheels "ticks". */
+		#undef PLOOPY_DRAGSCROLL_DIVISOR_V
+		#undef PLOOPY_DRAGSCROLL_DIVISOR_H
+		#define PLOOPY_DRAGSCROLL_DIVISOR_V 8.0
+		#define PLOOPY_DRAGSCROLL_DIVISOR_H 8.0
 
             leftwheel_lowres_scroll_tick += leftwheel_delta;
             rightwheel_lowres_scroll_tick += rightwheel_delta;
